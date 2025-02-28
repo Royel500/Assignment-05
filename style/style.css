@@ -1,0 +1,15 @@
+h1 {
+    white-space: nowrap;
+}
+.head-box{
+
+   
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+}
