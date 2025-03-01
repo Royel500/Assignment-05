@@ -50,8 +50,12 @@ document.querySelectorAll('.number-01').forEach(button => {
         // Check if all buttons are disabled
         const allDisabled = Array.from(document.querySelectorAll('.number-01')).every(btn => btn.disabled);
         if (allDisabled) {
-            // Disable all buttons
-            document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            // Disable all buttons except the last button
+            document.querySelectorAll('button').forEach(btn => {
+                if (btn.id !== 'last-button') {
+                    btn.disabled = true;
+                }
+            });
             alert('Congrates !! You have completed all the current task');
         }
     });
