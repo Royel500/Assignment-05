@@ -13,3 +13,8 @@ h1 {
     padding-right: 15px;
     margin: 5px;
 }
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}

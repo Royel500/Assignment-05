@@ -27,7 +27,7 @@ document.getElementById('last-button').addEventListener('click', function() {
 
 // ----------card button -------------------
 
-document.querySelectorAll('#number-01').forEach(button => {
+document.querySelectorAll('.number-01').forEach(button => {
     button.addEventListener('click', function() {
         const headingNumberElement = document.getElementById('heading-number');
         const normalNumberElement = document.getElementById('normal-number');
@@ -40,10 +40,20 @@ document.querySelectorAll('#number-01').forEach(button => {
         normalNumberElement.innerText = convertNormal - 1;
 
         const newDiv = document.createElement('div');
-        newDiv.innerText = "Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly.";
+        const currentDateTime = new Date().toLocaleString();
+        const cardTitle = button.closest('.card').querySelector('.card-heading').innerText; // Corrected line
+        newDiv.innerText = `You have completed the task ${cardTitle} at ${currentDateTime}`;
         paraElement.appendChild(newDiv);
 
         button.disabled = true;
+        alert('Board Update successfully');
+        // Check if all buttons are disabled
+        const allDisabled = Array.from(document.querySelectorAll('.number-01')).every(btn => btn.disabled);
+        if (allDisabled) {
+            // Disable all buttons
+            document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            alert('Congrates !! You have completed all the current task');
+        }
     });
 });
 
